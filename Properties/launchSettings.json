@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "convert": {
+      "commandName": "Project",
+      "commandLineArgs": ".\\file_to_convert.in",
+      "workingDirectory": "C:\\Users\\ad3791\\dev\\quote\\script"
+    }
+  }
+}

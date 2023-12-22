@@ -1,0 +1,69 @@
+```markdown
+# Migration File Formatter
+
+## Overview
+
+This C# script enhances the readability of migration files in Entity Framework Core. It formats "Up" and "Down" methods, extracting details from `migrationBuilder.UpdateData` calls. Dynamic lookups for key column and column types are performed based on table, column, and key column names.
+
+## Usage
+
+1. **Requirements:** Ensure you have [.NET Core](https://dotnet.microsoft.com/download) installed.
+
+2. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/adampenn/EFCoreMigrationScript.git
+   cd your-repo
+   ```
+
+3. **Run the Script:**
+   ```bash
+   dotnet run /path/to/your/migrationfile.cs
+   ```
+
+4. **Output:**
+   - The script will modify the provided migration file, enhancing the formatting.
+
+## Example
+
+Before:
+```csharp
+// ... Original content
+
+migrationBuilder.UpdateData(
+    schema: "YourSchema",
+    table: "YourTable",
+    keyColumnTypes: new string[] { "YourKeyType" },
+    keyColumns: new string[] { "YourKeyColumn" },
+    keyValues: new string[] { "YourKeyValue" },
+    columnTypes: new string[] { "YourColumnType" },
+    columns: new string[] { "YourColumn" },
+    values: new object[] { "YourValue" });
+
+// ... Original content
+```
+
+After:
+```csharp
+// ... Original content
+
+migrationBuilder.UpdateData(
+    schema: "YourSchema",
+    table: "YourTable",
+    keyColumnTypes: new string[] { "ImprovedKeyType" },
+    keyColumns: new string[] { "ImprovedKeyColumn" },
+    keyValues: new string[] { "YourKeyValue" },
+    columnTypes: new string[] { "ImprovedColumnType" },
+    columns: new string[] { "ImprovedColumn" },
+    values: new object[] { "YourValue" });
+
+// ... Original content
+```
+
+## Contributing
+
+Feel free to contribute by opening issues or submitting pull requests.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+```
